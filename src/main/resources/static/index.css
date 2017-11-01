@@ -1,0 +1,145 @@
+/* CSS comments look like this. You can also hit Ctrl+/ in codepen to comment out selected code.
+
+You may want to try commenting out bits below to see how the layout changes. */
+
+
+header {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	border-bottom:  4px solid black;
+}
+
+h1 {
+	grid-column: 2/8;
+	grid-row: 1/2;
+	text-shadow: 2px 2px rgb(220, 223, 232);
+	font-size: 300%;
+	width: 100%;
+	text-align: center;
+	
+	
+}
+
+body {
+	background-color: rgb(188, 194, 211);
+}
+
+h2 {
+	grid-area: h2;
+	text-shadow: 2px 2px rgb(188, 194, 211);
+	font-size: 40px;
+	font-family: Georgia;
+	width: 100%;
+	text-align: center;
+	color: black;
+	text-shadow: 2px 2px rgb(188, 194, 211);
+}
+
+#container-all {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: 1fr 1fr;
+	padding: 1;
+	margin: 0px 75px 0px 75px;
+}
+
+.repeatreview{
+	text-align: center;
+}
+
+.repeatimage{
+	width: 80%;
+	height: auto;
+	display: inline-block;
+	padding: 5px;
+	border: solid 2px black;
+}
+
+
+#container-single {
+	display: grid;
+	grid-template-columns: 200px 1fr 1fr 1fr 200px;
+	grid-template-rows: repeat(4, auto) 50px repeat(3, auto);
+	grid-template-areas: 
+	". h2 h2 h2 ." 
+	". ReviewCategory-single ReviewCategory-single HOOA-single ."
+	". PhoneNumber-single . HOOB-single ." 
+	". Address-single . HOOC-single ." 
+	". . . . ."
+	". Content-single Content-single Content-single ." 
+	". Image-single Image-single Image-single ." 
+	". . GoHome-single . .";
+}
+
+#ReviewCategory-single {
+	grid-area: ReviewCategory-single;
+	font-family: Georgia;
+}
+
+#PhoneNumber-single {
+	grid-area: PhoneNumber-single;
+	font-family: Georgia;
+}
+
+#Address-single {
+	grid-area: Address-single;
+	font-family: Georgia;
+}
+
+#HOOA-single {
+	grid-area: HOOA-single;
+	font-family: Georgia;
+}
+
+#HOOB-single {
+	grid-area: HOOB-single;
+	font-family: Georgia;
+}
+#HOOC-single {
+	grid-area: HOOC-single;
+	font-family: Georgia;
+}
+
+#Content-single {
+	grid-area: Content-single;
+	font-family: Georgia;
+}
+
+#Image-single {
+	width: 80%;
+	hight: auto;
+	grid-area: Image-single;
+	padding: 5px;
+	margin: 20px;
+	border: solid 2px black;
+	justify-self: center;
+}
+
+#GoHome-single {
+	grid-area: GoHome-single;
+	text-align: center;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: gray;
+	text-decoration: underline;
+}
+
+a:active{
+	color: white;
+	text-decoration: underline;
+}
+footer {
+	text-align: center;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title th:text="'Restaurant: '+ ${modelRestaurant.getTitle()}"></title>
+<link rel="stylesheet" type="text/css" href="/index.css"></link>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header>
+		<h1>WCCI Restaurant Reviews</h1>
+	</header>
+
+	<div id="container-single">
+
+
+
+		<!-- h2 -->
+
+		<h2 id="Title-single" th:text="${modelRestaurant.getTitle()}"></h2>
+
+		<div id="ReviewCategory-single"
+			th:text="${modelRestaurant.getReviewCategory() + ' Restaurant'}"></div>
+		<div id="PhoneNumber-single"
+			th:text="'Phone #: ' + ${modelRestaurant.getPhoneNumber()}"></div>
+		<div id="Address-single" th:text="'Address: ' + ${modelRestaurant.getAddress()}"></div>
+		<div id="HOOA-single"
+			th:text="${modelRestaurant.getHoursOfOperationA()}"></div>
+		<div id="HOOB-single"
+			th:text="${modelRestaurant.getHoursOfOperationB()}"></div>
+		<div id="HOOC-single"
+			th:text="${modelRestaurant.getHoursOfOperationC()}"></div>
+		<div id="Content-single" th:text="${modelRestaurant.getContent()}"></div>
+		<img id="Image-single" th:src="${modelRestaurant.getImage()}"
+			class="content"></img>
+		<div id="GoHome-single">
+			<a th:href="@{/allRestaurant}"> Go Home </a>
+		</div>
+	</div>
+
+</body>
+
+<footer>
+	<p>Created by C&amp;T &#169;2017 all information and comments are
+		not real and are for demo purpose only</p>
+</footer>
+
+
+</html>

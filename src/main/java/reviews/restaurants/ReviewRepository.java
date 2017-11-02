@@ -4,19 +4,39 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReviewRepository {
+public class ReviewRepository implements CommandLineRunner{
+		
+		@Resource
+		private CategoryRepository categoryRepository;
+		
+		@Resource
+		private ReviewRepository restaurants;
+		
+		Category asian = new Category ("Asian", "images/asian.jpg");
+		categoryRepository.save(asian);
+		
+		Category steakhouse = new Category ("Steakhouse", "images/steakhouse.jpg");
+		categoryRepository.save(steakhouse);
+		
+		Category italian = new Category("Italian", "images/italian.jpg");
+		categoryRepository.save(italian);
+		
+		Category mexican = new Category("Mexican", "images/mexican.jpg");
+		categoryRepository.save(mexican);
+		
 
-	public ReviewRepository() {
-
-		Review restaurant = new Review(0L, "Outback Steakhouse", "/images/OutbackSteakhouse.jpg", "American",
+		Review outback = new Review("Steakhouse", "Outback Steakhouse","/images/OutbackSteakhouse.jpg",
 				"Outback has been one of favorites for years, but a sign on the door may change that. My ribeye was was cooked perfectly to the point that the knife wasn't necessary. The salads were large and fresh and the bread was still warm. My problem is a new sign saying no firearms allowed. If this is a store by store decision, I guess I will have to find a new favorite restaurant.",
 				"614-755-9926", "6000 E Main St, Columbus, OH 43213", "Mon-Thu: 11:00am – 10:00pm",
 				" Fri-Sat: 11:00am - 11:00pm", "Sun: 11:00am-  9:00pm");
 
-		reviews.put(0L, restaurant);
+		reviews.save(outback);
 
 		Review restaurant1 = new Review(1L, "J. Alexander's", "/images/J.Alexanders.jpg", "American",
 				"Delicious as usual! Never a disappointment. I read the menu every time and every time I get the same thing because it is so amazing. The drink-a fleur de lis. The appetizer-deviled eggs. The salad-Is a Alex but it's the dressing that makes it a standout, champagne vinaigrette. The main-Filet, it just melts. I take home half my dinner just so I can have dessert-Carrot cake and French press coffee. If you have never been here make a reservation pronto. There is quite a variety to pick from. Sushi sandwiches, even chicken tenders. It is always a nice evening out. My husbands favorite part is the cold bottle of water they bring to the table. He smiles every time they set it down.",
@@ -70,5 +90,9 @@ public class ReviewRepository {
 	public Review findOne(Long id) {
 		return reviews.get(id);
 
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
 	}
 }

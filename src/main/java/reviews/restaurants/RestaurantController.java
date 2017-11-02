@@ -15,21 +15,29 @@ public class RestaurantController {
 	@Resource
 	private ReviewRepository reviews;
 
-	@RequestMapping("/restaurant")
-	public String showRestaurant(@RequestParam("id") long id, Model model) {
+	@RequestMapping("/review")
+	public String showReview(@RequestParam("id") long id, Model model) {
 
-		model.addAttribute("modelRestaurant", reviews.findOne(id));
-		return "restaurant-template";
+		model.addAttribute("reviewModel", reviews.findOne(id));
+		return "reviewView";
 
 	}
 
-	@RequestMapping("/allrestaurants")
-	public String showAll(Model model) {
+	@RequestMapping("/categories")
+	public String showCategories(Model model) {
 
 		Collection<Review> restaurants = reviews.findAll();
 
-		model.addAttribute("modelAllRestaurant", restaurants);
-		return "restaurant-all-template";
+		model.addAttribute("categoriesModel", restaurants);
+		return "categoriesView";
+	}
+
+	@RequestMapping("/category")
+	public String showCategory(@RequestParam("id") long id, Model model) {
+
+		model.addAttribute("singleCategoryModel", reviews.findOne(id));
+		return "singleCategoryView";
+
 	}
 
 }

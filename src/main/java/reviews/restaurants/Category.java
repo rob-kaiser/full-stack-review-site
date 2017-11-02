@@ -16,8 +16,10 @@ public class Category {
 	@Id @GeneratedValue 
 //@ Id is a primary key field & @GeneratedValue is automatically created a value
 	@Column(name="category")
+	
 	private long id;
 	@OneToMany(mappedBy ="category") //we had to make a fetchtype...the other option is lazy vs. eager
+	
 	
 	private List<Review> reviews;
 }

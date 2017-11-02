@@ -3,6 +3,8 @@ package reviews.resturants;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -10,6 +12,7 @@ public class Review {
 	private String restaurant;
 	private String image;
 	private String reviewCategory;
+	@Lob
 	private String content;
 	private String phoneNumber;
 	private String address;
@@ -18,6 +21,7 @@ public class Review {
 	private String hoursOfOperationC;
 	@Id @GeneratedValue long id;
 
+	@ManyToOne
 	public long getId() {
 		return id;
 	}

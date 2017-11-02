@@ -1,4 +1,4 @@
-package reviews.resturants;
+package reviews.restaurants;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class RestaurantControler {
+public class RestaurantController {
 
 	@Resource
 	private ReviewRepository reviews;
@@ -23,7 +23,7 @@ public class RestaurantControler {
 
 	}
 
-	@RequestMapping("/allRestaurant")
+	@RequestMapping("/allrestaurants")
 	public String showAll(Model model) {
 
 		Collection<Review> restaurants = reviews.findAll();

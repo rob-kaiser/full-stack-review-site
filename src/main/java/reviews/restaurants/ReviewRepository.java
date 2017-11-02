@@ -1,4 +1,4 @@
-package reviews.resturants;
+package reviews.restaurants;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ public class ReviewRepository {
 	public ReviewRepository() {
 
 		Review restaurant = new Review(0L, "Outback Steakhouse", "/images/OutbackSteakhouse.jpg", "American",
-				"Outback has been one of favorite for years, but a sign on the door may change that. My ribeye was was cooked perfect to the point that the knife wasn't hardly needed. The salads were large and fresh and the bread was fresh. My problem is a new sign saying no firearms allowed. If this is a store by store decision, I guess I will have to find a new favorite restaurant",
+				"Outback has been one of favorites for years, but a sign on the door may change that. My ribeye was was cooked perfectly to the point that the knife wasn't necessary. The salads were large and fresh and the bread was still warm. My problem is a new sign saying no firearms allowed. If this is a store by store decision, I guess I will have to find a new favorite restaurant.",
 				"614-755-9926", "6000 E Main St, Columbus, OH 43213", "Mon-Thu: 11:00am – 10:00pm",
 				" Fri-Sat: 11:00am - 11:00pm", "Sun: 11:00am-  9:00pm");
 
@@ -42,7 +42,7 @@ public class ReviewRepository {
 				"Fri-Sat: 11:30am - 10:00pm", "Sun: 11:00am - 9:00pm");
 		reviews.put(4L, restaurant4);
 
-		Review restaurant5 = new Review(5L, "Buci Di Bepo", "/images/BuciDiBepo.jpg", "Italian",
+		Review restaurant5 = new Review(5L, "Bucci Di Beppo", "/images/BuciDiBepo.jpg", "Italian",
 				"The restaurant decoration is fabulous.. They walk you through the kitchen before seating, I recommend picking one entree for two because the portions are HUGE there is no way that you can have a 3 course meal with these portions. I would definitely go back to this restaurant when I am craving for Italian and very hungry!",
 				"614-621-3287", "343 N Front St Columbus, Ohio 43215", " Mon-Thu: 11:00am - 10:00pm",
 				"Fri-Sat: 11:00am - 11:00pm", "Sun: 11:00am - 9:00pm");

@@ -1,4 +1,4 @@
-package reviews.resturants;
+package reviews.restaurants;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

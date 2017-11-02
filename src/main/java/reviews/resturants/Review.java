@@ -1,8 +1,11 @@
 package reviews.resturants;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -17,6 +20,9 @@ public class Review {
 	private String hoursOfOperationB;
 	private String hoursOfOperationC;
 	@Id @GeneratedValue long id;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="review")
 
 	public long getId() {
 		return id;

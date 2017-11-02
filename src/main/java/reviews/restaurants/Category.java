@@ -1,12 +1,13 @@
 package reviews.restaurants;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 
@@ -18,8 +19,36 @@ public class Category {
 	@Column(name="category")
 	
 	private long id;
+	private String name;
+	private String image;
 	@OneToMany(mappedBy ="category") //we had to make a fetchtype...the other option is lazy vs. eager
 	
 	
-	private List<Review> reviews;
+	@OrderBy("name")
+	private Set<Review> reviews;
+	
+	public long getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+	
+
+	// JPA needs no argument constructor
+	public Category() {
+	}
+
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+
+	public Category(String name, String image) {
+		this.name = name;
+		this.image = image;
+	}
 }

@@ -5,27 +5,59 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
 
+	@Id @GeneratedValue
+	private long id;
 	private String restaurant;
 	private String image;
-	private String reviewCategory;
+	private Category reviewCategory;
+	@Lob
 	private String content;
 	private String phoneNumber;
 	private String address;
 	private String hoursOfOperationA;
 	private String hoursOfOperationB;
 	private String hoursOfOperationC;
-	@Id @GeneratedValue long id;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	
+	@ManyToOne
+	private Category category;
+	
+	public Category getCategory() {
+		return reviewCategory;
+	}
+	
 	@JoinColumn(name="review")
 
 	public long getId() {
 		return id;
+	}
+	
+	private Review() {
+		
+	}
+	public Review(String restaurant) {
+		this.restaurant=restaurant;
+	}
+	
+	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
+			String address, String hoursOfOperationA, String hoursOfOperationB, String hoursOfOperationC) {
+	
+		this.restaurant = restaurant;
+		this.image = image;
+		this.reviewCategory = reviewCategory;
+		this.content = content;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.hoursOfOperationA = hoursOfOperationA;
+		this.hoursOfOperationB = hoursOfOperationB;
+		this.hoursOfOperationC = hoursOfOperationC;
 	}
 
 	public String getImage() {
@@ -60,22 +92,10 @@ public class Review {
 		return restaurant;
 	}
 
-	public String getReviewCategory() {
+	public Category getReviewCategory() {
 		return reviewCategory;
 	}
 
-	public Review(long id, String restaurant, String image, String reviewCategory, String content, String phoneNumber,
-			String address, String hoursOfOperationA, String hoursOfOperationB, String hoursOfOperationC) {
-		this.id = id;
-		this.restaurant = restaurant;
-		this.image = image;
-		this.reviewCategory = reviewCategory;
-		this.content = content;
-		this.phoneNumber = phoneNumber;
-		this.address = address;
-		this.hoursOfOperationA = hoursOfOperationA;
-		this.hoursOfOperationB = hoursOfOperationB;
-		this.hoursOfOperationC = hoursOfOperationC;
-	}
+	
 
 }

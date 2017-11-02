@@ -26,7 +26,7 @@
 	
 		<div id="container-all">
 	
-	<div class="repeatreview" th:each="reviews: ${modelAllRestaurant}">
+	<div class="repeatreview" th:each="reviews: ${categoriesModel}">
 	
 		<h2>
 			<a th:href="@{/restaurant(id=${reviews.id})}"

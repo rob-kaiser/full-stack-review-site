@@ -14,15 +14,7 @@ public class RestaurantController {
 
 	@Resource
 	private ReviewRepository reviews;
-
-	@RequestMapping("/review")
-	public String showReview(@RequestParam("id") long id, Model model) {
-
-		model.addAttribute("reviewModel", reviews.findOne(id));
-		return "reviewView";
-
-	}
-
+	
 	@RequestMapping("/categories")
 	public String showCategories(Model model) {
 
@@ -31,7 +23,7 @@ public class RestaurantController {
 		model.addAttribute("categoriesModel", restaurants);
 		return "categoriesView";
 	}
-
+	
 	@RequestMapping("/category")
 	public String showCategory(@RequestParam("id") long id, Model model) {
 
@@ -39,5 +31,16 @@ public class RestaurantController {
 		return "singleCategoryView";
 
 	}
+
+	@RequestMapping("/review")
+	public String showReview(@RequestParam("id") long id, Model model) {
+		Review selectedReview = reviews.findOne(id);
+		model.addAttribute(selectedReview);
+		return "reviewView";
+
+	}
+
+	
+
 
 }

@@ -3,37 +3,36 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title th:text="'Category '+ ${reviewModel.getCategory()}"></title>
+<title th:text="'Restaurant: '+ ${reviewModel.getRestaurant()}"></title>
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
 </head>
 
 <body>
 
-	<!-- Header -->
 	<header>
 		<h1>WCCI Restaurant Reviews</h1>
 	</header>
 
 	<div id="container-single">
-
 		<div class="nav-wrapper">
 			<nav class="navbar">
-				<ul>
+				<ul class="clearfix">
 					<li><a class="inactive" href="/home">Home</a></li>
 					<li><a class="inactive" href="/categories">Cuisines</a></li>
 					<li><a class="inactive" href="/restaurants">Restaurants</a></li>
 				</ul>
 			</nav>
 		</div>
-		<h1>
-			List of <a th:text="${category.name}"></a> Restaurants:
-		</h1>
-		<article>
-			<a th:each="current: ${category.restaurants}"
-				th:href="@{/restaurant/(id=${current.id})}"> <img class="image"
-				th:src="${current.image}" /></a>
+		<h1 th:text="${review.restaurant}"></h1>
+		<h2 th:text="${review.reviewCategory}"></h2>
+		<article class="content">
+			<img class="restaurant-image" th:src="${review.image}" />
+			<h2 th:text="'Phone Number ' + ${review.phoneNumber}"></h2>
+			<h2 th:text="'Address' + ${review.address}"></h2>
+			<div id="each-review" th:text="${review.getContent()}"></div>
+
+
 		</article>
-	</div>
 </body>
 
 <footer>

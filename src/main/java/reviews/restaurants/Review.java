@@ -1,63 +1,61 @@
 package reviews.restaurants;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private long id;
 	private String restaurant;
+	@Lob
 	private String image;
+	@ManyToOne
 	private Category reviewCategory;
 	@Lob
 	private String content;
 	private String phoneNumber;
+	@Lob
 	private String address;
-	private String hoursOfOperationA;
-	private String hoursOfOperationB;
-	private String hoursOfOperationC;
-	
-	
-	@ManyToOne
-	private Category category;
-	
+
 	public Category getCategory() {
 		return reviewCategory;
 	}
-	
-	@JoinColumn(name="review")
+
+	@JoinColumn(name = "review")
 
 	public long getId() {
 		return id;
 	}
-	
+
 	private Review() {
-		
+
 	}
+
 	public Review(String restaurant) {
-		this.restaurant=restaurant;
+		this.restaurant = restaurant;
 	}
-	
-	public Review(String restaurant, String image, String content, String phoneNumber,
-			String address, String hoursOfOperationA) {
-	
+
+	public Review(String restaurant, String image, String content, String phoneNumber, String address,
+			String hoursOfOperationA) {
+	}
+
+	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
+			String address) {
+
 		this.restaurant = restaurant;
 		this.image = image;
 		this.reviewCategory = reviewCategory;
 		this.content = content;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
-		this.hoursOfOperationA = hoursOfOperationA;
-		this.hoursOfOperationB = hoursOfOperationB;
-		this.hoursOfOperationC = hoursOfOperationC;
+
 	}
 
 	public String getImage() {
@@ -76,18 +74,6 @@ public class Review {
 		return address;
 	}
 
-	public String getHoursOfOperationA() {
-		return hoursOfOperationA;
-	}
-
-	public String getHoursOfOperationB() {
-		return hoursOfOperationB;
-	}
-
-	public String getHoursOfOperationC() {
-		return hoursOfOperationC;
-	}
-
 	public String getRestaurant() {
 		return restaurant;
 	}
@@ -96,6 +82,9 @@ public class Review {
 		return reviewCategory;
 	}
 
-	
+	@Override
+	public String toString() {
+		return String.format("A restaurant with id %s and name '%s'", id, restaurant);
+	}
 
 }

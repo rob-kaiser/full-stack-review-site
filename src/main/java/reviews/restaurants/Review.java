@@ -46,8 +46,8 @@ public class Review {
 		this.restaurant=restaurant;
 	}
 	
-	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
-			String address, String hoursOfOperationA, String hoursOfOperationB, String hoursOfOperationC) {
+	public Review(String restaurant, String image, String content, String phoneNumber,
+			String address, String hoursOfOperationA) {
 	
 		this.restaurant = restaurant;
 		this.image = image;

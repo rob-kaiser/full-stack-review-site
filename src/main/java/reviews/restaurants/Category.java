@@ -40,15 +40,21 @@ public class Category {
 	
 
 	// JPA needs no argument constructor
-	public Category() {
-	}
 
-	public Set<Review> getReviews() {
+	public Set<Review> getReview() {
 		return reviews;
+	}
+	
+	@SuppressWarnings("unused")
+	private Category() {
 	}
 
 	public Category(String name, String image) {
 		this.name = name;
 		this.image = image;
+	}
+	@Override
+	public String toString() {
+		return name;
 	}
 }

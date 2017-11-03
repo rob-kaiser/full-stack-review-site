@@ -16,18 +16,24 @@
 
 	<div id="container-single">
 
-
-
-		<!-- h2 -->
-
-		<a th:href="@{/{category.id})}"></a><h2 id="Title-single" th:text="${reviewModel.getRestaurant()}"></h2>
-
-	
-		<div id="GoHome-single">
-			<a th:href="@{/categories}"> Go Home </a>
+		<div class="nav-wrapper">
+			<nav class="navbar">
+				<ul>
+					<li><a class="inactive" href="/home">Home</a></li>
+					<li><a class="inactive" href="/categories">Cuisines</a></li>
+					<li><a class="inactive" href="/restaurants">Restaurants</a></li>
+				</ul>
+			</nav>
 		</div>
+		<h1>
+			List of <a th:text="${category.name}"></a> Restaurants:
+		</h1>
+		<article>
+			<a th:each="current: ${category.restaurants}"
+				th:href="@{/restaurant/(id=${current.id})}"> <img class="image"
+				th:src="${current.image}" /></a>
+		</article>
 	</div>
-
 </body>
 
 <footer>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Movie List</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"></link>
+</head>
+<body>
+	<div class="nav-wrapper">
+		<nav class="navbar">
+			<ul>
+				<li><a class="inactive" href="/home">Home</a></li>
+				<li><a class="inactive" href="/categories">Cuisines</a></li>
+				<li><a class="active">Restaurants</a></li>
+			</ul>
+		</nav>
+	</div>
+	<h1>Columbus' Top Restaurants</h1>
+	<h2>Select restaurant</h2>
+	<article class="content">
+		<a class="restaurant-thumb" th:each="currentRestaurant: ${restaurants}"
+			th:href="@{/restaurant(id=${currentRestaurant.id})}"> <img
+		 th:src="${currentRestaurant.image}"></img>
+		</a>
+	</article>
+</body>
+</html>

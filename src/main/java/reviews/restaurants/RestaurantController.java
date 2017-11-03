@@ -1,7 +1,5 @@
 package reviews.restaurants;
 
-import java.util.Collection;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -13,34 +11,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RestaurantController {
 
 	@Resource
-	private ReviewRepository reviews;
-	
+	private ReviewRepository reviewRepo;
+
+	@Resource
+	private CategoryRepository categoryRepo;
+
+	@RequestMapping("/home")
+	public String showHomepage() {
+		return "home";
+	}
+
 	@RequestMapping("/categories")
 	public String showCategories(Model model) {
 
-		Collection<Review> restaurants = reviews.findAll();
-
-		model.addAttribute("categoriesModel", restaurants);
-		return "categoriesView";
+		model.addAttribute("categories", categoryRepo.findAll());
+		return "categoriesList";
 	}
-	
+
 	@RequestMapping("/category")
-	public String showCategory(@RequestParam("id") long id, Model model) {
-
-		model.addAttribute("singleCategoryModel", reviews.findOne(id));
-		return "singleCategoryView";
-
+	public String showCategory(@RequestParam("id") Long id, Model model) {
+		model.addAttribute(categoryRepo.findOne(id));
+		return "singleCategory";
 	}
 
-	@RequestMapping("/review")
-	public String showReview(@RequestParam("id") long id, Model model) {
-		Review selectedReview = reviews.findOne(id);
-		model.addAttribute(selectedReview);
-		return "reviewView";
-
+	@RequestMapping("/restaurants")
+	public String showRestaurants(Model model) {
+		model.addAttribute("restaurants", reviewRepo.findAll());
+		return "restaurantList";
 	}
 
-	
-
-
+	@RequestMapping("/restaurant")
+	public String showRestaurant(@RequestParam("id") long id, Model model) {
+		Review selectedRestaurant = reviewRepo.findOne(id);
+		model.addAttribute(selectedRestaurant);
+		return "singleRestaurant";
+	}
 }

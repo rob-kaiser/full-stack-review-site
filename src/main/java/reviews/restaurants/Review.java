@@ -22,11 +22,7 @@ public class Review {
 	private String content;
 	private String phoneNumber;
 	@Lob
-	private String address;<<<<<<<HEAD
-
-	=======
-
-	>>>>>>>54ef 104d 5d 5 bab0e96ac4ab38d01edd411214c12
+	private String address;
 
 	public Category getCategory() {
 		return reviewCategory;
@@ -40,7 +36,7 @@ public class Review {
 
 	private Review() {
 
-	}<<<<<<<HEAD
+	}
 
 	public Review(String restaurant) {
 		this.restaurant = restaurant;
@@ -53,12 +49,6 @@ public class Review {
 	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
 			String address) {
 
-=======
-
-	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
-			String address) {
-	
->>>>>>> 54ef104d5d5bab0e96ac4ab38d01edd411214c12
 		this.restaurant = restaurant;
 		this.image = image;
 		this.reviewCategory = reviewCategory;
@@ -83,10 +73,6 @@ public class Review {
 	public String getAddress() {
 		return address;
 	}
-
-	<<<<<<<HEAD=======
-
-	>>>>>>>54ef 104d 5d 5 bab0e96ac4ab38d01edd411214c12
 
 	public String getRestaurant() {
 		return restaurant;

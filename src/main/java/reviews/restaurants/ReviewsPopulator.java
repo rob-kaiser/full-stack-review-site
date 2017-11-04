@@ -4,17 +4,16 @@ import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
 
-
 public class ReviewsPopulator implements CommandLineRunner {
 
+	@Resource
+	private ReviewRepository reviewRepo;
 
-		@Resource
-		private ReviewRepository reviewRepo;
+	@Resource
+	private CategoryRepository categoryRepo;
 
-		@Resource
-		private CategoryRepository categoryRepo;
-		@Override
-		public void run(String... args) throws Exception {
+	@Override
+	public void run(String... args) throws Exception {
 
 		// Category (name, image)
 		Category asian = new Category("Asian", "images/asian.jpg");

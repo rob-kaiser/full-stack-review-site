@@ -10,8 +10,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Review {
 
-	@Id
-	@GeneratedValue
+	@Id @GeneratedValue
 	private long id;
 	private String restaurant;
 	@Lob
@@ -23,32 +22,25 @@ public class Review {
 	private String phoneNumber;
 	@Lob
 	private String address;
+	
 
+	
 	public Category getCategory() {
 		return reviewCategory;
 	}
-
-	@JoinColumn(name = "review")
+	
+	@JoinColumn(name="review")
 
 	public long getId() {
 		return id;
 	}
-
+	
 	private Review() {
-
+		
 	}
-
-	public Review(String restaurant) {
-		this.restaurant = restaurant;
-	}
-
-	public Review(String restaurant, String image, String content, String phoneNumber, String address,
-			String hoursOfOperationA) {
-	}
-
 	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
 			String address) {
-
+	
 		this.restaurant = restaurant;
 		this.image = image;
 		this.reviewCategory = reviewCategory;
@@ -73,6 +65,7 @@ public class Review {
 	public String getAddress() {
 		return address;
 	}
+
 
 	public String getRestaurant() {
 		return restaurant;

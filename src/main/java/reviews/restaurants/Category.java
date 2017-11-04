@@ -38,6 +38,7 @@ public class Category {
 		return image;
 	}
 	
+
 	// JPA needs no argument constructor
 
 	public Set<Review> getReview() {

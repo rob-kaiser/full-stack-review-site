@@ -22,28 +22,28 @@ public class RestaurantController {
 	}
 
 	@RequestMapping("/categories")
-	public String showCategories(Model model) {
+	public String fetchCategory(Model model) {
 
 		model.addAttribute("categories", categoryRepo.findAll());
 		return "categoriesList";
 	}
 
 	@RequestMapping("/category")
-	public String showCategory(@RequestParam("id") Long id, Model model) {
+	public String fetchCategory(@RequestParam("id") long id, Model model) {
 		model.addAttribute(categoryRepo.findOne(id));
-		return "singleCategory";
+		return "category";
 	}
 
 	@RequestMapping("/restaurants")
-	public String showRestaurants(Model model) {
+	public String fetchRestaurants(Model model) {
 		model.addAttribute("restaurants", reviewRepo.findAll());
-		return "restaurantList";
+		return "restaurants";
 	}
 
 	@RequestMapping("/restaurant")
-	public String showRestaurant(@RequestParam("id") long id, Model model) {
+	public String fetchRestaurant(@RequestParam("id") long id, Model model) {
 		Review selectedRestaurant = reviewRepo.findOne(id);
 		model.addAttribute(selectedRestaurant);
-		return "singleRestaurant";
+		return "restaurant";
 	}
 }

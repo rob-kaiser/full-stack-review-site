@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title th:text="'Restaurant: '+ ${reviewModel.getRestaurant()}"></title>
-<link rel="stylesheet" type="text/css" href="/index.css"></link>
+<!-- <title th:text="'Restaurant: '+ ${restaurant.restaurant}"></title>
+ --><link rel="stylesheet" type="text/css" href="/index.css"></link>
 </head>
 
 <body>
@@ -23,22 +23,23 @@
 				</ul>
 			</nav>
 		</div>
-		<h1 th:text="${review.restaurant}"></h1>
-		<h2 th:text="${review.reviewCategory}"></h2>
-		<article class="content">
-			<img class="restaurant-image" th:src="${review.image}" />
-			<h2 th:text="'Phone Number ' + ${review.phoneNumber}"></h2>
-			<h2 th:text="'Address' + ${review.address}"></h2>
-			<div id="each-review" th:text="${review.getContent()}"></div>
+		<!-- <h1 th:text="${restaurant.restaurant}"></h1> -->
+		<h2 th:text="${restaurant.reviewCategory}"></h2>
+		<!-- <article class="content">
+			<img class="restaurant-image" th:src="${restaurant.image}" />
+			<h2 th:text="'Phone Number ' + ${restaurant.phoneNumber}"></h2>
+			<h2 th:text="'Address' + ${restaurant.address}"></h2>
+			<div id="each-review" th:text="${restaurant.content}"></div>
 
 
-		</article>
+		</article> -->
+		</div>
 </body>
-
 <footer>
 	<p>Created by C&amp;T &#169;2017 all information and comments are
 		not real and are for demo purpose only</p>
 </footer>
+
 
 
 </html>

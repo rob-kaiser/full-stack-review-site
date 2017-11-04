@@ -10,40 +10,40 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Review {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private long id;
 	private String restaurant;
 	@Lob
 	private String image;
 	@ManyToOne
-	private Category reviewCategory;
+	private Category category;
 	@Lob
 	private String content;
 	private String phoneNumber;
 	@Lob
 	private String address;
-	
 
-	
 	public Category getCategory() {
-		return reviewCategory;
+		return category;
 	}
-	
-	@JoinColumn(name="review")
+
+	@JoinColumn(name = "review")
 
 	public long getId() {
 		return id;
 	}
-	
+
 	private Review() {
-		
+
 	}
-	public Review(Category reviewCategory, String restaurant, String image, String content, String phoneNumber,
+
+	public Review(Category category, String restaurant, String image, String content, String phoneNumber,
 			String address) {
-	
+
 		this.restaurant = restaurant;
 		this.image = image;
-		this.reviewCategory = reviewCategory;
+		this.category = category;
 		this.content = content;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
@@ -66,13 +66,8 @@ public class Review {
 		return address;
 	}
 
-
 	public String getRestaurant() {
 		return restaurant;
-	}
-
-	public Category getReviewCategory() {
-		return reviewCategory;
 	}
 
 	@Override

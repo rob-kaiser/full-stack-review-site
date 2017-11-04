@@ -3,7 +3,9 @@ package reviews.restaurants;
 import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ReviewsPopulator implements CommandLineRunner {
 
 	@Resource

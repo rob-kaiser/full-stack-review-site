@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title th:text="'Category '+ ${reviewModel.getCategory()}"></title>
+<title th:text="'Category '+ ${category.name}"></title>
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
 </head>
 
@@ -26,13 +26,16 @@
 			</nav>
 		</div>
 		<h1>
-			List of <a th:text="${category.name}"></a> Restaurants:
+			List of <span th:text="${category.name}"></span> Restaurants:
 		</h1>
-		<article>
-			<a th:each="current: ${category.restaurants}"
-				th:href="@{/restaurant/(id=${current.id})}"> <img class="image"
-				th:src="${current.image}" /></a>
-		</article>
+
+
+		<div th:each="currentCategory: ${category.reviews}"
+			th:href="@{/category/(id=${currentCategory.id})}">
+			<a th:href="@{/restaurant(id=${currentCategory.id})}">
+			<h3
+					th:text="${currentCategory.restaurant}"></h3></a>
+		</div>
 	</div>
 </body>
 

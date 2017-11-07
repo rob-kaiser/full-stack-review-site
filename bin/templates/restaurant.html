@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- <title th:text="'Restaurant: '+ ${restaurant.restaurant}"></title>
- --><link rel="stylesheet" type="text/css" href="/index.css"></link>
+<title th:text="'Restaurant: '+ ${restaurant.restaurant}"></title>
+<link rel="stylesheet" type="text/css" href="/index.css"></link>
 </head>
 
 <body>
@@ -24,15 +24,15 @@
 			</nav>
 		</div>
 		<!-- <h1 th:text="${restaurant.restaurant}"></h1> -->
-		<h2 th:text="${restaurant.reviewCategory}"></h2>
-		<!-- <article class="content">
+		<h2 th:text="${restaurant.category}"></h2>
+		<article class="content">
 			<img class="restaurant-image" th:src="${restaurant.image}" />
 			<h2 th:text="'Phone Number ' + ${restaurant.phoneNumber}"></h2>
 			<h2 th:text="'Address' + ${restaurant.address}"></h2>
 			<div id="each-review" th:text="${restaurant.content}"></div>
 
 
-		</article> -->
+		</article>
 		</div>
 </body>
 <footer>

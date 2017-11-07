@@ -16,12 +16,15 @@
 	</div>
 	<h1>Columbus' Top Restaurants</h1>
 	<h2>Select restaurant</h2>
-	<div th:each="currentRestaurant: ${restaurants}">
+
+	<div>
 		<a th:each="currentRestaurant: ${restaurants}"
 			th:href="@{/restaurant(id=${currentRestaurant.id})}">
 			<h3 th:text="${currentRestaurant.restaurant}" />
 		</a>
 	</div>
+
+	<img th:src="@{jalex.jpg}" />
 
 
 </body>

@@ -36,7 +36,7 @@ public class ReviewsPopulator implements CommandLineRunner {
 
 		reviewRepo.save(outback);
 
-		Review alexanders = new Review(steakhouse, "J. Alexander's", "/images/J.Alexanders.jpg",
+		Review alexanders = new Review(steakhouse, "J. Alexander's", "/images/jalex.jpg",
 				"Delicious as usual! Never a disappointment. I read the menu every time and every time I get the same thing because it is so amazing. The drink-a fleur de lis. The appetizer-deviled eggs. The salad-Is a Alex but it's the dressing that makes it a standout, champagne vinaigrette. The main-Filet, it just melts. I take home half my dinner just so I can have dessert-Carrot cake and French press coffee. If you have never been here make a reservation pronto. There is quite a variety to pick from. Sushi sandwiches, even chicken tenders. It is always a nice evening out. My husbands favorite part is the cold bottle of water they bring to the table. He smiles every time they set it down.",
 				"(614) 847-1166", "7550 Vantage Dr\r\n" + "Columbus, OH 43235");
 		reviewRepo.save(alexanders);

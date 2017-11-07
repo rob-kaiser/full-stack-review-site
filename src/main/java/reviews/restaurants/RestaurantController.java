@@ -30,7 +30,7 @@ public class RestaurantController {
 
 	@RequestMapping("/category")
 	public String fetchCategory(@RequestParam("id") long id, Model model) {
-		model.addAttribute(categoryRepo.findOne(id));
+		model.addAttribute("category", categoryRepo.findOne(id));
 		return "category";
 	}
 
@@ -43,7 +43,7 @@ public class RestaurantController {
 	@RequestMapping("/restaurant")
 	public String fetchRestaurant(@RequestParam("id") long id, Model model) {
 		Review selectedRestaurant = reviewRepo.findOne(id);
-		model.addAttribute(selectedRestaurant);
+		model.addAttribute("restaurant", selectedRestaurant);
 		return "restaurant";
 	}
 }

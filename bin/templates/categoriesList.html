@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>WCCI Restaurant Reviews</title>
+<title>Categories</title>
 
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
 
@@ -16,7 +16,7 @@
 
 <body>
 
-<div class="nav-wrapper">
+	<div class="nav-wrapper">
 		<nav class="navbar">
 			<ul>
 				<li><a class="inactive" href="/home">Home</a></li>
@@ -26,14 +26,12 @@
 		</nav>
 	</div>
 	<div id="container-all">
-	<h1>What are you in the mood for?</h1>
-	<h2>Select cuisine:</h2>
-	<article>
-		<a th:each="category: ${categoriesList}"
-			th:href="@{/category(id=${category.id})}"> <img
-			class="categoryImage" th:src="${category.image}"></img>
+		<h1>What are you in the mood for?</h1>
+		<h2>Select cuisine:</h2>
+		<a th:each="currentCategory: ${categories}"
+			th:href="@{/category/(id=${currentCategory.id})}">
+			<p th:text="${currentCategory.name}"></p>
 		</a>
-	</article>
 	</div>
 </body>
 <footer>

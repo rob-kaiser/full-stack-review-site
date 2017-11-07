@@ -24,7 +24,7 @@ public class Category {
 	private String image;
 	@OneToMany(mappedBy = "category") // we had to make a fetchtype...the other option is lazy vs. eager
 
-	@OrderBy("name")
+	@OrderBy("restaurant")
 	private Set<Review> reviews;
 
 	public long getId() {
@@ -41,7 +41,7 @@ public class Category {
 
 	// JPA needs no argument constructor
 
-	public Set<Review> getReview() {
+	public Set<Review> getReviews() {
 		return reviews;
 	}
 

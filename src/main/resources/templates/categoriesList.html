@@ -29,9 +29,10 @@
 	<article id ="cuisine" th:each="currentCategory: ${categories}">
 		<h2>
 			<a th:href="@{/category/(id=${currentCategory.id})}"
-				th:text="${currentCategory.name}"><img th:src="${currentCategory.image}" />
+				th:text="${currentCategory.name}">
 			</a>
 		</h2>
+		<a th:href="@{/category/(id=${currentCategory.id})}"><img th:src="${currentCategory.image}" alt="Image Not Available"/></a>
 	</article>
 </body>
 <footer>

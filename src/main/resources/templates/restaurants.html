@@ -18,7 +18,8 @@
 	<div>
 		<a th:each="currentRestaurant: ${restaurants}"
 			th:href="@{/restaurant(id=${currentRestaurant.id})}">
-			<h3 th:text="${currentRestaurant.restaurant}" />
+			<h3 th:text="${currentRestaurant.restaurant}" ></h3>
+			<img class="thumbnail" th:src="${currentRestaurant.image}"/>
 		</a>
 	</div>
 

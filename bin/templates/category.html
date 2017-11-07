@@ -16,31 +16,30 @@
 	</header>
 
 
-			<nav class="navbar">
-				<ul>
-					<li><a class="inactive" href="/home">Home</a></li>
-					<li><a class="inactive" href="/categories">Cuisines</a></li>
-					<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-				</ul>
-			</nav>
-		<h1>
-			List of <span th:text="${category.name}"></span> Restaurants:
-		</h1>
+	<nav class="navbar">
+		<ul>
+			<li><a class="inactive" href="/home">Home</a></li>
+			<li><a class="inactive" href="/categories">Cuisines</a></li>
+			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
+		</ul>
+	</nav>
+	<h1>
+		List of <span th:text="${category.name}"></span> Restaurants:
+	</h1>
 
 
-		<div id="eachcuisine" th:each="currentCategory: ${category.reviews}"
-			th:href="@{/category/(id=${currentCategory.id})}">
-			<span><a th:href="@{/restaurant(id=${currentCategory.id})}">
-			<h3
-					th:text="${currentCategory.restaurant}"></h3>
-					<img th:src="${currentCategory.image}" />
-					</a></span>
+	<section id="eachcuisine" th:each="currentCategory: ${category.reviews}"
+		th:href="@{/category/(id=${currentCategory.id})}">
+		<span><a th:href="@{/restaurant(id=${currentCategory.id})}">
+				<h3 th:text="${currentCategory.restaurant}"></h3> <img
+				th:src="${currentCategory.image}" />
+		</a></span>
 
-		</div>
+	</section>
 </body>
 
 <footer>
-	<p>Created by C&amp;T &#169;2017 all information and comments are
+	<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all information and comments are
 		not real and are for demo purpose only</p>
 </footer>
 

@@ -1,19 +1,21 @@
 header {
-
+	
 }
 
-.home body{
-	 background-image: url("/columbus/jpg");
+.home {
+	background-image: url("/images/columbus/jpg");
 }
 
 .home-grid {
-	display: grid;
-	grid-template-columns: 1 fr 1fr;
-	text-align: center:
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	padding: 2em;
 }
 
-#categories {
-	grid-column: 1/2;
+#cuisine {
+	display: grid;
+	
 }
 
 #restaurants {
@@ -22,6 +24,17 @@ header {
 
 img {
 	max-width: 100%;
+}
+
+img:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.thumbnail img {
+	border: 3px solid #ddd; /* Gray border */
+	border-radius: 4px; /* Rounded border */
+	padding: 5px; /* Some padding */
+	max-width: 10em; /* Set a small width */
 }
 
 .navbar {
@@ -35,17 +48,13 @@ img {
 	flex-wrap: wrap;
 	flex-flow: row-wrap;
 	align-items: space-around;
-	align-content: center;
+	
 }
 
 #eachcuisine {
 	display: grid;
 	grid-template-columns: 1fr, 1fr;
 	align-content: space-evenly;
-}
-
-#eachcuisine span:nth-child(2n) {
-	grid-column-start: 2/3;
 }
 
 .repeatreview {
@@ -59,24 +68,29 @@ img {
 	padding: 5px;
 	border: solid 2px black;
 }
+
 html, body {
-  margin:0;
-  height:100%;
-  min-height:100%;
+	margin: 0;
+	height: 100%;
+	min-height: 100%;
 }
+
 body {
-  margin:0;
-  display: flex;
-  flex-direction: column;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
 }
+
 header {
-  flex: 1 0 10%;
+	flex: 1 0 10%;
 }
+
 #cuisine {
-    flex: auto;
-    overflow-y: auto;
+	flex: auto;
+	overflow-y: auto;
 }
+
 footer {
-    height: 40px;
-    text-align: center;
+	height: 40px;
+	text-align: center;
 }

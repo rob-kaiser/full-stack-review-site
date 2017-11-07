@@ -41,17 +41,17 @@ public class ReviewsPopulator implements CommandLineRunner {
 				"(614) 847-1166", "7550 Vantage Dr\r\n" + "Columbus, OH 43235");
 		reviewRepo.save(alexanders);
 
-		Review chile = new Review(mexican, "Chile Verde", "/images/ChileVerde.jpg",
-				"Satisfy your cravings for authentic New Mexican cuisine right here at Chile Verde Cafe. Our food is a unique fusion of Native American and Latino cultures, featuring the most exotic flavors that will certainly delight any palate.",
-				"614-442-6630", "4852 Sawmill Rd, Columbus, OH 43235");
-		reviewRepo.save(chile);
+		Review alegrias = new Review(mexican, "Alegria's Seafood", "/images/alegrias.jpg",
+				"Alegria's is a hole-in-the-wall restaurant bringing traditional beach hut cuisine to the Midwest! We pride ourselves on offering fresh seafood that is passionately cooked — and we’re certain you’ll be able to taste the difference. Our diverse menu will satisfy the adventurous foodie and the traditional diner alike. Enjoy a house-made cocktail and a seasonally inspired plate for a truly unique Mexican seafood experience!",
+				"(614) 793-8190", "2584 Bethel Rd, Columbus, OH 43220");
+		reviewRepo.save(alegrias);
 
-		Review condados = new Review(mexican, "Condados Tacos", "/images/CondadosTacos.jpg",
-				"Great tacos and a fantastic happy hour Monday through Friday. Have had issues with the wait staff messing up the checks repeatedly, and it can get loud in there during peak times. Otherwise it's a good place for some casual tacos and tequila.",
-				"614-928-3909", "1227 N High St, Columbus, OH 43201");
-		reviewRepo.save(condados);
+		Review guachos = new Review(mexican, "Los Guachos Taqueria", "/images/losguachos.jpg",
+				"Los Gauchos is THE best, authentic taco place in Columbus. It also has the best horchata! If you're looking for a place for great tacos or gringas, you need to try this place--you won't be disappointed.",
+				"(614) 538-0211", "5221 Godown Rd, Columbus, OH 43235");
+		reviewRepo.save(guachos);
 
-		Review bravo = new Review(italian, "Bravo Cucina Italiana", "/images/BravoCrosswoods.jpg",
+		Review bravo = new Review(italian, "Bravo Cucina Italiana", "/images/bravo.jpg",
 				"Bring your appetite and your zest for life to our BRAVO Cucina Italiana Italian Restaurant at our Crosswoods location, and you can experience your own little slice of Italy right here in Columbus Ohio. Enjoy traditional classics with a twist in an elegant, family-friendly setting that's perfect for any occasion. It's all right here waiting at BRAVO Cucina Italiana, the best Italian Restaurant in Columbus.",
 				"(614) 888-3881", "7470 Vantage Drive\r\n" + "Columbus, OH 43235");
 		reviewRepo.save(bravo);
@@ -66,9 +66,9 @@ public class ReviewsPopulator implements CommandLineRunner {
 				"614-372-5228", "2653 N High St, Columbus, OH 43202");
 		reviewRepo.save(sushi);
 
-		Review japan = new Review(asian, "House of Japan", "/images/HouseOfJapan.jpg",
-				"This place is great.  I have been coming here for 7 years. Rocky is my favorite chef.  I love when  I I get him and some kids at the table.  He always makes it's fun.",
-				"614-781-1776", "8701 Sancus Blvd, Columbus, OH 43240");
-		reviewRepo.save(japan);
+		Review poongmei = new Review(asian, "Poong Mei", "/images/poongmei.jpg",
+				"Poong Mei does an excellent job balancing Korean flavors with Chinese dishes and bringing out course after course of well-presented dishes.  All of our guests were more than satisfied with the experience.  If you are a fan of Korean-Chinese dishes such as jajangmyeon, kkanpunggi, and palbochae, Poong Mei is the restaurant for you.",
+				"(614) 273-9998", "4720 Reed Rd, Upper Arlington, OH 43220");
+		reviewRepo.save(poongmei);
 	}
 }

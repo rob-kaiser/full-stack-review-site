@@ -33,7 +33,7 @@ public class Review {
 	public long getId() {
 		return id;
 	}
-
+	//empty constructor needed for JPA!!
 	private Review() {
 
 	}

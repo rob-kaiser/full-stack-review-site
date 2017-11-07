@@ -26,15 +26,13 @@
 
 	<h1>What are you in the mood for?</h1>
 	<h2>Select cuisine:</h2>
-	<div id="cuisine">
+	<article id ="cuisine" th:each="currentCategory: ${categories}">
 		<h2>
-			<a th:each="currentCategory: ${categories}"
-				th:href="@{/category/(id=${currentCategory.id})}"
-				th:text="${currentCategory.name}"> <img
-				th:src="${currentCategory.image}" />
+			<a th:href="@{/category/(id=${currentCategory.id})}"
+				th:text="${currentCategory.name}"><img th:src="${currentCategory.image}" />
 			</a>
 		</h2>
-	</div>
+	</article>
 </body>
 <footer>
 

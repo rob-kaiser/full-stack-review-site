@@ -34,10 +34,6 @@ public class Review {
 		return id;
 	}
 
-	private Review() {
-
-	}
-
 	public Review(Category category, String restaurant, String image, String content, String phoneNumber,
 			String address) {
 

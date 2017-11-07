@@ -30,7 +30,7 @@
 
 	<section id="eachcuisine" th:each="currentCategory: ${category.reviews}"
 		th:href="@{/category/(id=${currentCategory.id})}">
-		<span><a th:href="@{/restaurant(id=${currentCategory.id})}">
+		<span><a th:href="@{/rest"src/main/java/reviews/restaurants/ReviewRepository.java"aurant(id=${currentCategory.id})}">
 				<h3 th:text="${currentCategory.restaurant}"></h3> <img
 				th:src="${currentCategory.image}" />
 		</a></span>

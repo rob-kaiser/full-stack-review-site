@@ -2,25 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Home</title>
-<link rel="stylesheet" type="text/css" href="index.css"></link>
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+<link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
 <body>
-	<div class="nav-wrapper">
-		<nav class="navbar">
-			<ul class="clearfix">
-				<li><a class="active">Home</a></li>
-				<li><a class="inactive" href="/categories">Cuisines</a></li>
- 				<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-			</ul>
-		</nav>
-	</div>
-	<h1>Life's too short to eat anything less than delicious! Check out the Columbus food scene. </h1>
-	<h2>Select:</h2>
-	
-	<img th:src="@{images/jalex.jpg}"/>
-	<img th:src="@{images/chileverde.jpg}"/>
-	<img th:src="@{images/sushitime.jpg}"/>
-	
+	<div class="home">
 
+		<h1>Life's too short to eat anything less than delicious! Check
+			out the Columbus food scene.</h1>
+		<h2>
+			Select:
+</h2>
+		<div class="home-grid">
+				<a id="categories" href="/categories">View By Cuisine</a>
+				<a id="restaurants" href="/restaurants">See All
+						Restaurants</a>
+			</div>
+	
+	</div>
 </body>
 </html>

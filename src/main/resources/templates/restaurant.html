@@ -5,41 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title th:text="'Restaurant: '+ ${restaurant.restaurant}"></title>
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
+<link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
 
 <body>
 
 	<header>
-		<h1>WCCI Restaurant Reviews</h1>
+		<h1 th:text="${restaurant.restaurant}"></h1>
 	</header>
 
-	<div id="container-single">
-		<div class="nav-wrapper">
-			<nav class="navbar">
-				<ul class="clearfix">
-					<li><a class="inactive" href="/home">Home</a></li>
-					<li><a class="inactive" href="/categories">Cuisines</a></li>
-					<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-				</ul>
-			</nav>
-		</div>
-		<!-- <h1 th:text="${restaurant.restaurant}"></h1> -->
-		<h2 th:text="${restaurant.category}"></h2>
-		<article class="content">
-			<img class="restaurant-image" th:src="${restaurant.image}" />
-			<h2 th:text="'Phone Number ' + ${restaurant.phoneNumber}"></h2>
-			<h2 th:text="'Address' + ${restaurant.address}"></h2>
-			<div id="each-review" th:text="${restaurant.content}"></div>
+	<nav class="navbar">
+		<ul>
+			<li><a class="inactive" href="/home">Home</a></li>
+			<li><a class="inactive" href="/categories">Cuisines</a></li>
+			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
+		</ul>
+	</nav>
+	
+	<h2 th:text="${restaurant.category}"></h2>
+	<article>
+		<img class="restaurant-image" th:src="${restaurant.image}" />
+		<h2 th:text="'Phone Number: ' + ${restaurant.phoneNumber}"></h2>
+		<h2 th:text="'Address: ' + ${restaurant.address}"></h2>
+		<div id="each-review" th:text="${restaurant.content}"></div>
 
+	</article>
 
-		</article>
-		</div>
 </body>
-<footer>
-	<p>Created by C&amp;T &#169;2017 all information and comments are
-		not real and are for demo purpose only</p>
-</footer>
-
-
+<footer> </footer>
 
 </html>

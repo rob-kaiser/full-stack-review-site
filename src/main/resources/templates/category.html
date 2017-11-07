@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title th:text="'Category '+ ${category.name}"></title>
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
+<link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
 
 <body>
@@ -14,9 +15,7 @@
 		<h1>WCCI Restaurant Reviews</h1>
 	</header>
 
-	<div id="container-single">
 
-		<div class="nav-wrapper">
 			<nav class="navbar">
 				<ul>
 					<li><a class="inactive" href="/home">Home</a></li>
@@ -24,19 +23,20 @@
 					<li><a class="inactive" href="/restaurants">Restaurants</a></li>
 				</ul>
 			</nav>
-		</div>
 		<h1>
 			List of <span th:text="${category.name}"></span> Restaurants:
 		</h1>
 
 
-		<div th:each="currentCategory: ${category.reviews}"
+		<div id="eachcuisine" th:each="currentCategory: ${category.reviews}"
 			th:href="@{/category/(id=${currentCategory.id})}">
-			<a th:href="@{/restaurant(id=${currentCategory.id})}">
+			<span><a th:href="@{/restaurant(id=${currentCategory.id})}">
 			<h3
-					th:text="${currentCategory.restaurant}"></h3></a>
+					th:text="${currentCategory.restaurant}"></h3>
+					<img th:src="${currentCategory.image}" />
+					</a></span>
+
 		</div>
-	</div>
 </body>
 
 <footer>

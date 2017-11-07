@@ -11,34 +11,36 @@
 <title>Categories</title>
 
 <link rel="stylesheet" type="text/css" href="/index.css"></link>
+<link rel="stylesheet" type="text/css" href="layout.css"></link>
 
 </head>
 
 <body>
+	<nav class="navbar">
+		<ul>
+			<li><a class="inactive" href="/home">Home</a></li>
+			<li><a class="active">Cuisines</a></li>
+			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
+		</ul>
+	</nav>
 
-	<div class="nav-wrapper">
-		<nav class="navbar">
-			<ul>
-				<li><a class="inactive" href="/home">Home</a></li>
-				<li><a class="active">Cuisines</a></li>
-				<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-			</ul>
-		</nav>
-	</div>
-	<div id="container-all">
-		<h1>What are you in the mood for?</h1>
-		<h2>Select cuisine:</h2>
-		<a th:each="currentCategory: ${categories}"
-			th:href="@{/category/(id=${currentCategory.id})}">
-			<p th:text="${currentCategory.name}"></p>
-		</a>
+	<h1>What are you in the mood for?</h1>
+	<h2>Select cuisine:</h2>
+	<div id="cuisine">
+		<h2>
+			<a th:each="currentCategory: ${categories}"
+				th:href="@{/category/(id=${currentCategory.id})}"
+				th:text="${currentCategory.name}"> <img
+				th:src="${currentCategory.image}" />
+			</a>
+		</h2>
 	</div>
 </body>
 <footer>
 
 
-	<p>Created by C&amp;T &#169;2017 all information and comments are
-		not real and are for demo purpose only</p>
+	<p>Created by C&amp;T Perfected by A&amp;R &#169; 2017 all
+		information and comments are not real and are for demo purpose only</p>
 </footer>
 
 </html>

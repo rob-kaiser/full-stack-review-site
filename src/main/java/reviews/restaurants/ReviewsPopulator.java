@@ -18,16 +18,16 @@ public class ReviewsPopulator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		// Category (name, image)
-		Category asian = new Category("Asian", "images/asian.jpg");
+		Category asian = new Category("Asian", "/images/asian.jpg");
 		categoryRepo.save(asian);
 
-		Category steakhouse = new Category("Steakhouse", "images/steakhouse.jpg");
+		Category steakhouse = new Category("Steakhouse", "/images/steakhouse.jpg");
 		categoryRepo.save(steakhouse);
 
-		Category italian = new Category("Italian", "images/italian.jpg");
+		Category italian = new Category("Italian", "/images/italian.jpg");
 		categoryRepo.save(italian);
 
-		Category mexican = new Category("Mexican", "images/mexican.jpg");
+		Category mexican = new Category("Mexican", "/images/mexican.jpg");
 		categoryRepo.save(mexican);
 
 		Review outback = new Review(steakhouse, "Outback", "/images/OutbackSteakhouse.jpg",

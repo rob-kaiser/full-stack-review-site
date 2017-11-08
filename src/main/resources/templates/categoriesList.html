@@ -10,7 +10,7 @@
 
 <title>Categories</title>
 
-<link rel="stylesheet" type="text/css" href="/index.css"></link>
+<link rel="stylesheet" type="text/css" href="style.css"></link>
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
 
 </head>
@@ -26,7 +26,7 @@
 
 	<h1>What are you in the mood for?</h1>
 	<h2>Select cuisine:</h2>
-	<article id ="cuisine" th:each="currentCategory: ${categories}">
+	<article th:each="currentCategory: ${categories}">
 		<h2>
 			<a th:href="@{/category/(id=${currentCategory.id})}"
 				th:text="${currentCategory.name}">

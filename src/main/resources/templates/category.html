@@ -4,44 +4,41 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title th:text="'Category '+ ${category.name}"></title>
-<link rel="stylesheet" type="text/css" href="/index.css"></link>
+<link rel="stylesheet" type="text/css" href="style.css"></link>
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
-
 <body>
-
-	<!-- Header -->
-	<header>
-		<h1>WCCI Restaurant Reviews</h1>
-	</header>
-
-
 	<nav class="navbar">
 		<ul>
-			<li><a class="inactive" href="/home">Home</a></li>
+			<li><a class="active" href="/home">Home</a></li>
 			<li><a class="inactive" href="/categories">Cuisines</a></li>
 			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
 		</ul>
 	</nav>
-	<h1>
-		List of <span th:text="${category.name}"></span> Restaurants:
-	</h1>
+	<div class="home">
+
+		<header>
+			<h1 th:text="${category.name}"></h1>
+		</header>
+
+		<h1>
+			List of <span th:text="${category.name}"></span> Restaurants:
+		</h1>
 
 
-	<section id="eachcuisine" th:each="currentCategory: ${category.reviews}"
-		th:href="@{/category/(id=${currentCategory.id})}">
-		<span><a th:href="@{/rest"src/main/java/reviews/restaurants/ReviewRepository.java"aurant(id=${currentCategory.id})}">
-				<h3 th:text="${currentCategory.restaurant}"></h3> <img
-				th:src="${currentCategory.image}" />
-		</a></span>
+		<section id="eachcuisine"
+			th:each="currentCategory: ${category.reviews}"
+			th:href="@{/category/(id=${currentCategory.id})}">
+			<span><a th:href="@{/restaurant(id=${currentCategory.id})}">
+					<h3 th:text="${currentCategory.restaurant}"></h3> <img
+					th:src="${currentCategory.image}" />
+			</a></span>
 
-	</section>
+		</section>
+</div>
+		<footer>
+			<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all
+				information and comments are not real and are for demo purpose only</p>
+		</footer>
 </body>
-
-<footer>
-	<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all information and comments are
-		not real and are for demo purpose only</p>
-</footer>
-
-
 </html>

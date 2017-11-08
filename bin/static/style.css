@@ -1,45 +1,48 @@
-
-*{
+* {
 	font-family: "Arial";
-	text-align: center:
-	background-image: url("/images/woodWallpaper.jpg");
+	text-align: center;
+	color: white;
 }
+
 h1 {
 	text-shadow: 2px 2px rgb(220, 223, 232);
 	font-size: 55px;
-	text-align: center;	
+	text-align: center;
 }
+
 .home {
 	font-size: 50px;
 }
+
 .navbar {
 	color: white;
 	background-color: black;
 }
+.content {
+	background-color: black;
+}
+
+p {
+	margin: 30px;
+	font-size: 22px;
+}
 
 h2 {
 	font-size: 40px;
-	width: 100%;
-	text-align: center;
-	color: black;
 }
 
 a:link {
-	color: blue;
-	text-decoration: none;
+	color: #b4b4b4;
 }
 
-a:visited{
-	color: purple;
-	text-decoration: none;
+a:visited {
+	color: #f0f0f0;
 }
 
-a:hover{
-	color: gray;
-	text-decoration: underline;
+a:hover {
+	color: #6a5acd;
 }
 
-a:active{
-	color: white;
-	text-decoration: underline;
+a:active {
+	color: #6a5acd;
 }

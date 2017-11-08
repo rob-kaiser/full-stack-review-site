@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-
 <meta charset="utf-8" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <title>Categories</title>
-
 <link rel="stylesheet" type="text/css" href="style.css"></link>
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
-
 </head>
 
 <body>
@@ -29,10 +22,10 @@
 	<article th:each="currentCategory: ${categories}">
 		<h2>
 			<a th:href="@{/category/(id=${currentCategory.id})}"
-				th:text="${currentCategory.name}">
-			</a>
+				th:text="${currentCategory.name}"> </a>
 		</h2>
-		<a th:href="@{/category/(id=${currentCategory.id})}"><img th:src="${currentCategory.image}" alt="Image Not Available"/></a>
+		<a th:href="@{/category/(id=${currentCategory.id})}"><img
+			th:src="${currentCategory.image}" alt="Image Not Available" /></a>
 	</article>
 </body>
 <footer>

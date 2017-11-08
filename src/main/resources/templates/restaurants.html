@@ -6,25 +6,25 @@
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
 <body>
-		<nav class="navbar">
-			<ul>
-				<li><a class="inactive" href="/home">Home</a></li>
-				<li><a class="inactive" href="/categories">Cuisines</a></li>
-				<li><a class="active">Restaurants</a></li>
-			</ul>
-		</nav>
+	<nav class="navbar">
+		<ul>
+			<li><a class="inactive" href="/home">Home</a></li>
+			<li><a class="inactive" href="/categories">Cuisines</a></li>
+			<li><a class="active">Restaurants</a></li>
+		</ul>
+	</nav>
 	<h1>Columbus' Top Restaurants</h1>
 	<h2>Select restaurant:</h2>
 	<div class="restaurant-grid">
 		<a th:each="currentRestaurant: ${restaurants}"
 			th:href="@{/restaurant(id=${currentRestaurant.id})}">
-			<h2 th:text="${currentRestaurant.restaurant}"></h2>
-			<img th:src="${currentRestaurant.image}"/>
+			<h2 th:text="${currentRestaurant.restaurant}"></h2> <img
+			th:src="${currentRestaurant.image}" />
 		</a>
 	</div>
-<footer>
-			<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all
-				information and comments are not real and are for demo purpose only</p>
-		</footer>
+	<footer>
+		<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all
+			information and comments are not real and are for demo purpose only</p>
+	</footer>
 </body>
 </html>

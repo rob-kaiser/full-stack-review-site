@@ -68,7 +68,7 @@ public class ReviewsPopulator implements CommandLineRunner {
 				"(614) 888-3881", "7470 Vantage Drive\r\n" + "Columbus, OH 43235", multiple);
 		reviewRepo.save(bravo);
 
-		Review bucci = new Review(italian, "Bucci Di Beppo", "/images/BuciDiBepo.jpg",
+		Review bucci = new Review(italian, "Bucci Di Beppo", "/images/bucaDiBeppoBetterPhoto.jpg",
 				"The restaurant decoration is fabulous.. They walk you through the kitchen before seating, I recommend picking one entree for two because the portions are HUGE there is no way that you can have a 3 course meal with these portions. I would definitely go back to this restaurant when I am craving for Italian and very hungry!",
 				"614-621-3287", "343 N Front St Columbus, Ohio 43215", multiple);
 		reviewRepo.save(bucci);

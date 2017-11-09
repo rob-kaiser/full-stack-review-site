@@ -1,13 +1,13 @@
-.home {
+.index {
 	padding-top: 3em;
 	background-image: url("/images/columbus.jpg");
 	background-repeat: no-repeat;
 	background-position: center, center;
 }
 
-.home-grid {
+.index-grid {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 33% 33% 33%;
 	margin-bottom: auto;
 }
 
@@ -22,6 +22,19 @@
 	grid-column: 1/3;
 	grid-row: 2;
 	width: 30em;
+}
+
+.categories {
+	display: grid;
+	grid-template-rows: 30% 70%;
+}
+.categories-grid {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	background-color: white;
+}
+.categories-grid a{
+	color: #333;
 }
 
 .navbar ul {

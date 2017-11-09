@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Home</title>
+<title th:text="'Location: '+ ${tag.location}"></title>
 <link rel="stylesheet" type="text/css" href="style.css"></link>
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
 <body>
-	<nav class="navbar">
+<nav class="navbar">
 		<ul>
-			<li><a class="active" href="/home">Home</a></li>
+			<li><a class="inactive" href="/home">Home</a></li>
 			<li><a class="inactive" href="/categories">Cuisines</a></li>
 			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
 			<li><a class="inactive" href="/tags">Locations</a></li>
 		</ul>
 	</nav>
-	<div class="home">
+	<h1>
+		<a th:text="${tag.location}"></a> Restaurants
+	</h1>
+	<h2>Select restaurant:</h2>
 
+	<article>
+		<a th:each="current: ${tag.taggedBy}"
+			th:href="@{/restaurant/(id=${current.id})}"><img
+			th:src="${current.image}" /></a>
+	</article>
 
-		<h1>Life's too short to eat anything less than delicious! Check
-			out the Columbus food scene.</h1>
-		<h2>Select:</h2>
-		<div class="home-grid">
-			<a id="categories" href="/categories">View By Cuisine</a> <a
-				id="restaurants" href="/restaurants">See All Restaurants</a>
-		</div>
-	</div>
 </body>
 </html>

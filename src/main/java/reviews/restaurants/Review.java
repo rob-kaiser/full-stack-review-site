@@ -1,10 +1,15 @@
 package reviews.restaurants;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -27,11 +32,16 @@ public class Review {
 	public Category getCategory() {
 		return category;
 	}
+	@ManyToMany
+	private Set<Tag> tags;
 
-	@JoinColumn(name = "review")
-
+	/*@JoinColumn(name = "review")*/
 	public long getId() {
 		return id;
+	}
+	
+	public Set<Tag> getTags() {
+		return tags;
 	}
 	//empty constructor needed for JPA!!
 	private Review() {
@@ -39,7 +49,7 @@ public class Review {
 	}
 
 	public Review(Category category, String restaurant, String image, String content, String phoneNumber,
-			String address) {
+			String address, Tag...tags) {
 
 		this.restaurant = restaurant;
 		this.image = image;
@@ -47,6 +57,7 @@ public class Review {
 		this.content = content;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
+		this.tags = new HashSet<>(Arrays.asList(tags));
 
 	}
 
@@ -75,4 +86,11 @@ public class Review {
 		return String.format("A restaurant with id %s and name '%s'", id, restaurant);
 	}
 
+	public void add(Tag tag) {
+		tags.add(tag);
+
+	}
+	public void remove(Tag tag) {
+		tags.remove(tag);
+	}
 }

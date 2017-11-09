@@ -13,10 +13,10 @@
 			<li><a class="active" href="/home">Home</a></li>
 			<li><a class="inactive" href="/categories">Cuisines</a></li>
 			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
+			<li><a class="inactive" href="/tags">Locations</a></li>
 		</ul>
 	</nav>
 	<div class="home">
-		<img th:dtv="${category.image}" />
 		<h1>
 			List of <span th:text="${category.name}"></span> Restaurants:
 		</h1>
@@ -32,6 +32,7 @@
 
 		</section>
 	</div>
+			<img th:src="${category.image}" />
 	<footer>
 		<p>Created by C&amp;T Perfected by A &amp; R &#169;2017 all
 			information and comments are not real and are for demo purpose only</p>

@@ -65,7 +65,7 @@ public class ReviewsPopulator implements CommandLineRunner {
 
 		Review bravo = new Review(italian, "Bravo Cucina Italiana", "/images/bravo.jpg",
 				"Bring your appetite and your zest for life to our BRAVO Cucina Italiana Italian Restaurant at our Crosswoods location, and you can experience your own little slice of Italy right here in Columbus Ohio. Enjoy traditional classics with a twist in an elegant, family-friendly setting that's perfect for any occasion. It's all right here waiting at BRAVO Cucina Italiana, the best Italian Restaurant in Columbus.",
-				"(614) 888-3881", "7470 Vantage Drive\r\n" + "Columbus, OH 43235", multiple);
+				"(614) 888-3881", "7470 Vantage Drive" + "Columbus, OH 43235", multiple);
 		reviewRepo.save(bravo);
 
 		Review bucci = new Review(italian, "Bucci Di Beppo", "/images/bucidibepo.jpg",

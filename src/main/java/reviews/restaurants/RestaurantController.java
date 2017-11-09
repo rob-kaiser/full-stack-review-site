@@ -63,8 +63,8 @@ public class RestaurantController {
 	}
 
 	@RequestMapping("/createTag")
-	public String createTag(@RequestParam(value = "id") Long id, String name) {
-		Tag tag = new Tag(name);
+	public String createTag(@RequestParam(value = "id") Long id, String location) {
+		Tag tag = new Tag(location);
 		tagRepo.save(tag);
 		Review selectedRestaurant = reviewRepo.findOne(id);
 		selectedRestaurant.add(tag);

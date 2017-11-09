@@ -83,6 +83,11 @@ img:hover {
 	grid-template-columns: 1fr, 1fr;
 	align-content: space-evenly;
 }
+#content-layout {
+	margin-top: 6em;
+	margin-left: 15em;
+	margin-right: 15em;
+}
 
 body {
 	margin: 0px;

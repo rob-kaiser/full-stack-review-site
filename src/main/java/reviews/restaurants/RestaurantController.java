@@ -15,6 +15,9 @@ public class RestaurantController {
 
 	@Resource
 	private CategoryRepository categoryRepo;
+	
+	@Resource
+	private TagRepository tagRepo;
 
 	@RequestMapping("/home")
 	public String showHomepage() {
@@ -45,5 +48,39 @@ public class RestaurantController {
 		Review selectedRestaurant = reviewRepo.findOne(id);
 		model.addAttribute("restaurant", selectedRestaurant);
 		return "restaurant";
+	}
+	@RequestMapping("/tags")
+	public String showTags(Model model) {
+		model.addAttribute("tags", tagRepo.findAll());
+		return "tags";
+	}
+
+	@RequestMapping("/tag")
+	public String fetchTagDetail(@RequestParam("id") Long id, Model model) {
+		Tag selectedTag = tagRepo.findOne(id);
+		model.addAttribute(selectedTag);
+		return "tag";
+	}
+
+	@RequestMapping("/createTag")
+	public String createTag(@RequestParam(value = "id") Long id, String name) {
+		Tag tag = new Tag(name);
+		tagRepo.save(tag);
+		Review selectedRestaurant = reviewRepo.findOne(id);
+		selectedRestaurant.add(tag);
+		reviewRepo.save(selectedRestaurant);
+		return "redirect:/review?id=" + id;
+	}
+
+	@RequestMapping("/deleteTag")
+	public String deleteTag(@RequestParam long tagId, @RequestParam long reviewId) {
+		Tag toDelete = tagRepo.findOne(tagId);
+		for (Review selectedRestaurant : toDelete.getTaggedBy()) {
+			selectedRestaurant.remove(toDelete);
+			reviewRepo.save(selectedRestaurant);
+		}
+
+		tagRepo.delete(toDelete);
+		return "redirect:/review?id=" + reviewId;
 	}
 }

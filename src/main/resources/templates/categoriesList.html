@@ -20,14 +20,16 @@
 
 	<h1>What are you in the mood for?</h1>
 	<h2>Select cuisine:</h2>
-	<article th:each="currentCategory: ${categories}">
+	<div class="categories-grid">
+	<article class="categories" th:each="currentCategory: ${categories}">
 		<h2>
 			<a th:href="@{/category/(id=${currentCategory.id})}"
-				th:text="${currentCategory.name}"> </a>
+				th:text="${currentCategory.name}"></a>
 		</h2>
 		<a th:href="@{/category/(id=${currentCategory.id})}"><img
-			th:src="${currentCategory.image}" alt="Image Not Available" /></a>
+			th:src="${currentCategory.image}"/></a>
 	</article>
+	</div>
 </body>
 <footer>
 

@@ -23,11 +23,15 @@
 	</nav>
 
 	<article>
-		<h3 th:text="'Phone Number: ' + ${restaurant.phoneNumber}"></h3>
-		<h3 th:text="'Address: ' + ${restaurant.address}"></h3>
-		<img class="restaurant-image" th:src="${restaurant.image}" />
 		<div class="content">
-			<p id="each-review" th:text="${restaurant.content}"></p>
+			<div id="content-layout">
+				<br></br>
+				<h3 th:text="'Phone Number: ' + ${restaurant.phoneNumber}"></h3>
+				<h3 th:text="'Address: ' + ${restaurant.address}"></h3>
+				<img class="restaurant-image" th:src="${restaurant.image}" />
+				<p id="each-review" th:text="${restaurant.content}"></p>
+				<br></br>
+			</div>
 		</div>
 		<h2 th:text="${restaurant.category}"></h2>
 

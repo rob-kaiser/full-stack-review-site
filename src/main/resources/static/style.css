@@ -10,7 +10,7 @@ h1 {
 	text-align: center;
 }
 
-.home {
+.index {
 	font-size: 50px;
 }
 
@@ -18,10 +18,12 @@ h1 {
 	color: white;
 	background-color: black;
 }
-.content {
-	background-color: black;
+.content h3, p {
+	color: #333;
 }
-
+.content {
+	background-color: white;
+}
 p {
 	margin: 30px;
 	font-size: 22px;

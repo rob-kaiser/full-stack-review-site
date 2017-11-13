@@ -32,12 +32,6 @@ public class ReviewsPopulator implements CommandLineRunner {
 
 		Category mexican = new Category("Mexican", "/images/mexican.jpg");
 		categoryRepo.save(mexican);
-
-		Review outback = new Review(steakhouse, "Outback", "/images/OutbackSteakhouse.jpg",
-				"Outback has been one of favorites for years, but a sign on the door may change that. My ribeye was was cooked perfectly to the point that the knife wasn't necessary. The salads were large and fresh and the bread was still warm. My problem is a new sign saying no firearms allowed. If this is a store by store decision, I guess I will have to find a new favorite restaurant.",
-				"614-755-9926", "6000 E Main St, Columbus, OH 43213");
-
-		reviewRepo.save(outback);
 		
 		Tag multiple = new Tag("All Over Columbus");
 		tagRepo.save(multiple);
@@ -50,13 +44,19 @@ public class ReviewsPopulator implements CommandLineRunner {
 
 		Review alexanders = new Review(steakhouse, "J. Alexander's", "/images/jalex.jpg",
 				"Delicious as usual! Never a disappointment. I read the menu every time and every time I get the same thing because it is so amazing. The drink-a fleur de lis. The appetizer-deviled eggs. The salad-Is a Alex but it's the dressing that makes it a standout, champagne vinaigrette. The main-Filet, it just melts. I take home half my dinner just so I can have dessert-Carrot cake and French press coffee. If you have never been here make a reservation pronto. There is quite a variety to pick from. Sushi sandwiches, even chicken tenders. It is always a nice evening out. My husbands favorite part is the cold bottle of water they bring to the table. He smiles every time they set it down.",
-				"(614) 847-1166", "7550 Vantage Dr\r\n" + "Columbus, OH 43235", multiple);
+				"(614) 847-1166", "7550 Vantage Dr" + "Columbus, OH 43235", multiple, northwest);
 		reviewRepo.save(alexanders);
 
 		Review alegrias = new Review(mexican, "Alegria's Seafood", "/images/alegrias.jpg",
 				"Alegria's is a hole-in-the-wall restaurant bringing traditional beach hut cuisine to the Midwest! We pride ourselves on offering fresh seafood that is passionately cooked — and we’re certain you’ll be able to taste the difference. Our diverse menu will satisfy the adventurous foodie and the traditional diner alike. Enjoy a house-made cocktail and a seasonally inspired plate for a truly unique Mexican seafood experience!",
 				"(614) 793-8190", "2584 Bethel Rd, Columbus, OH 43220", northwest);
 		reviewRepo.save(alegrias);
+		
+		Review outback = new Review(steakhouse, "Outback", "/images/OutbackSteakhouse.jpg",
+				"Outback has been one of favorites for years, but a sign on the door may change that. My ribeye was was cooked perfectly to the point that the knife wasn't necessary. The salads were large and fresh and the bread was still warm. My problem is a new sign saying no firearms allowed. If this is a store by store decision, I guess I will have to find a new favorite restaurant.",
+				"614-755-9926", "6000 E Main St, Columbus, OH 43213", multiple, northwest);
+
+		reviewRepo.save(outback);
 
 		Review guachos = new Review(mexican, "Los Guachos Taqueria", "/images/losguachos.jpg",
 				"Los Gauchos is THE best, authentic taco place in Columbus. It also has the best horchata! If you're looking for a place for great tacos or gringas, you need to try this place--you won't be disappointed.",
@@ -65,12 +65,12 @@ public class ReviewsPopulator implements CommandLineRunner {
 
 		Review bravo = new Review(italian, "Bravo Cucina Italiana", "/images/bravo.jpg",
 				"Bring your appetite and your zest for life to our BRAVO Cucina Italiana Italian Restaurant at our Crosswoods location, and you can experience your own little slice of Italy right here in Columbus Ohio. Enjoy traditional classics with a twist in an elegant, family-friendly setting that's perfect for any occasion. It's all right here waiting at BRAVO Cucina Italiana, the best Italian Restaurant in Columbus.",
-				"(614) 888-3881", "7470 Vantage Drive\r\n" + "Columbus, OH 43235", multiple);
+				"(614) 888-3881", "7470 Vantage Drive" + "Columbus, OH 43235", multiple);
 		reviewRepo.save(bravo);
 
-		Review bucci = new Review(italian, "Bucci Di Beppo", "/images/bucaDiBeppoBetterPhoto.jpg",
+		Review bucci = new Review(italian, "Bucci Di Beppo", "/images/bucidibepo.jpg",
 				"The restaurant decoration is fabulous.. They walk you through the kitchen before seating, I recommend picking one entree for two because the portions are HUGE there is no way that you can have a 3 course meal with these portions. I would definitely go back to this restaurant when I am craving for Italian and very hungry!",
-				"614-621-3287", "343 N Front St Columbus, Ohio 43215", multiple);
+				"614-621-3287", "343 N Front St Columbus, Ohio 43215", multiple, northwest, northCampus);
 		reviewRepo.save(bucci);
 
 		Review sushi = new Review(asian, "Sushi Time", "/images/SushiTime.jpg",

@@ -7,12 +7,32 @@
 </head>
 <body>
 	<nav class="navbar">
-		<ul>
-			<li><a class="active" href="/home">Home</a></li>
-			<li><a class="inactive" href="/categories">Cuisines</a></li>
-			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-			<li><a class="inactive" href="/tags">Locations</a></li>
-		</ul>
+
+		<a href="#home">Home</a>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Cuisines <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Restaurants <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Locations <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+			</div>
+		</div>
 	</nav>
 	<div class="index">
 
@@ -22,8 +42,8 @@
 		<h2>Select:</h2>
 		<div class="index-grid">
 			<a id="categories" href="/categories">View By Cuisine</a> <a
-				id="restaurants" href="/restaurants">See All Restaurants</a>
-				<a id="locations" href="/tags>">View By Location</a>
+				id="restaurants" href="/restaurants">See All Restaurants</a> <a
+				id="locations" href="/tags>">View By Location</a>
 		</div>
 	</div>
 </body>

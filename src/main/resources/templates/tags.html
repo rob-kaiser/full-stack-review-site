@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Home</title>
+<title th:text="'Location: '+ ${tag.location}"></title>
 <link rel="stylesheet" type="text/css" href="style.css"></link>
 <link rel="stylesheet" type="text/css" href="layout.css"></link>
 </head>
@@ -16,13 +16,10 @@
 	</nav>
 	<h2>Select location:</h2>
 	<div>
-		
 			<h3 th:each="tag: ${tags}"><a
 				th:href="@{/tag(id=${tag.id})}"><span th:text="${tag.location}"/>
 			</a></h3>
 			<img src="images/columbusSkylineAndMap.jpg"/>
-		
 	</div>
-
 </body>
 </html>

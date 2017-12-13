@@ -16,6 +16,9 @@ h1 {
 .content p {
 	color: #333;
 }
+.content h3, p {
+	color: #333;
+}
 .content {
 	background-color: white;
 }

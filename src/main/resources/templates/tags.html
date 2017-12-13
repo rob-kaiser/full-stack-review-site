@@ -11,19 +11,15 @@
 			<li><a class="inactive" href="/home">Home</a></li>
 			<li><a class="inactive" href="/categories">Cuisines</a></li>
 			<li><a class="inactive" href="/restaurants">Restaurants</a></li>
-			<li><a class="inactive" href="/tags">Locations</a></li>
+			<li><a class="active" href="/tags">Locations</a></li>
 		</ul>
 	</nav>
-	<h1>
-		<a th:text="${tag.location}"></a> Restaurants
-	</h1>
-	<h2>Select restaurant:</h2>
-
-	<article>
-		<a th:each="current: ${tag.taggedBy}"
-			th:href="@{/restaurant/(id=${current.id})}"><img
-			th:src="${current.image}" /></a>
-	</article>
-
+	<h2>Select location:</h2>
+	<div>
+			<h3 th:each="tag: ${tags}"><a
+				th:href="@{/tag(id=${tag.id})}"><span th:text="${tag.location}"/>
+			</a></h3>
+			<img src="images/columbusSkylineAndMap.jpg"/>
+	</div>
 </body>
 </html>

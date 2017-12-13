@@ -35,7 +35,6 @@ public class Review {
 	@ManyToMany
 	private Set<Tag> tags;
 
-	/*@JoinColumn(name = "review")*/
 	public long getId() {
 		return id;
 	}
@@ -43,7 +42,6 @@ public class Review {
 	public Set<Tag> getTags() {
 		return tags;
 	}
-	//empty constructor needed for JPA!!
 	private Review() {
 
 	}

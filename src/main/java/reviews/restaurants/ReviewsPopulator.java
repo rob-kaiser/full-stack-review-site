@@ -20,7 +20,6 @@ public class ReviewsPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		// Category (name, image)
 		Category asian = new Category("Asian", "/images/asian.jpg");
 		categoryRepo.save(asian);
 

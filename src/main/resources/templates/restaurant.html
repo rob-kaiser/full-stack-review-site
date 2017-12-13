@@ -26,8 +26,8 @@
 		<div class="content">
 			<div id="content-layout">
 				<br></br>
-				<h3 th:text="'Phone Number: ' + ${restaurant.phoneNumber}"></h3>
-				<h3 th:text="'Address: ' + ${restaurant.address}"></h3>
+				<p th:text="'Phone Number: ' + ${restaurant.phoneNumber}"></p>
+				<p th:text="'Address: ' + ${restaurant.address}"></p>
 				<img class="restaurant-image" th:src="${restaurant.image}" />
 				<p id="each-review" th:text="${restaurant.content}"></p>
 				<br></br>
